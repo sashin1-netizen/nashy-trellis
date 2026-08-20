@@ -1,0 +1,1 @@
+Binary hero asset pending upload through repository tooling. The live site currently uses vector/CSS artwork until the client photo asset is committed.
