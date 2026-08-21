@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://sashin1-netizen.github.io/nashy-trellis/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://sashin1-netizen.github.io/nashy-trellis/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://sashin1-netizen.github.io/nashy-trellis/trellis-gates-durban/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sashin1-netizen.github.io/nashy-trellis/burglar-bars-durban/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sashin1-netizen.github.io/nashy-trellis/window-security-durban/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sashin1-netizen.github.io/nashy-trellis/monkey-proof-gates-durban/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://sashin1-netizen.github.io/nashy-trellis/balustrades-durban/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://sashin1-netizen.github.io/nashy-trellis/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://sashin1-netizen.github.io/nashy-trellis/terms.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>
