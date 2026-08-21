@@ -1,0 +1,33 @@
+/* Cross-browser + desktop compatibility layer. Loaded last on purpose. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}img{max-width:100%}button,input,select{border-radius:0}a,button{-webkit-tap-highlight-color:transparent}
+/* Sticky/header fallbacks */
+.header{position:-webkit-sticky;position:sticky;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.header,.hero-proof,.mobile-dock{background:#070706!important}}
+/* GPU-safe transforms for Safari/Chromium/Firefox */
+.hero-visual,.hero-main,.hero-inset,.product-grid article,.project-grid figure,.guarantee,.btn{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.hero-main,.hero-inset,.project-grid figure{isolation:isolate}
+/* Clip-path fallback for guarantee badge */
+.hero-badge{-webkit-clip-path:polygon(50% 0,90% 16%,90% 61%,50% 100%,10% 61%,10% 16%);clip-path:polygon(50% 0,90% 16%,90% 61%,50% 100%,10% 61%,10% 16%)}
+@supports not (clip-path:polygon(0 0,100% 0,100% 100%)){.hero-badge{-webkit-clip-path:none;clip-path:none;border-radius:50%}}
+/* Grid fallbacks and min-width protection */
+.hero>* ,.section>*{min-width:0}.product-grid article,.project-grid figure,.steps>div,.lead-form label{min-width:0}.lead-form input,.lead-form select{width:100%;max-width:100%}
+/* Desktop QA: common laptop and monitor widths */
+@media (min-width:1101px) and (max-width:1279px){:root{--max:1160px}.header{gap:18px}.header nav{gap:16px}.brand{width:215px}.hero{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);padding-top:58px}.hero-copy{padding-right:28px}h1{font-size:82px}.hero-visual{min-height:455px}.hero-proof div{padding-left:8px;padding-right:8px}.product-grid{gap:10px}.product-grid article>div{padding:15px}}
+@media (min-width:1280px) and (max-width:1439px){:root{--max:1240px}.brand{width:225px}.header nav{gap:19px}.hero{padding-top:64px}.hero-copy{padding-right:34px}.hero-visual{min-height:470px}.product-grid{gap:11px}}
+@media (min-width:1440px) and (max-width:1679px){:root{--max:1360px}.hero-visual{min-height:500px}}
+@media (min-width:1680px){:root{--max:1500px}.hero{min-height:760px}.hero-copy{max-width:700px}.hero-visual{min-height:540px}.project-grid{grid-auto-rows:295px}}
+@media (min-width:2000px){:root{--max:1680px}.hero{min-height:820px}.hero-copy{max-width:760px}.hero-visual{min-height:600px}.section{padding-top:96px;padding-bottom:96px}.project-grid{grid-auto-rows:330px}}
+/* Short desktop/laptop viewports */
+@media (min-width:1101px) and (max-height:760px){.top-strip{height:30px}.header{height:72px}.brand{height:50px}.hero{min-height:620px;padding-top:42px;padding-bottom:105px}.hero-visual{min-height:430px}.hero-copy{align-self:start;padding-top:30px}h1{font-size:clamp(68px,6.2vw,94px)}.lead{font-size:15px}.hero-proof{bottom:14px}.hero-proof div{padding-top:12px;padding-bottom:12px}}
+/* Firefox: avoid filter animation softness on text-adjacent elements */
+@-moz-document url-prefix(){.reveal{filter:none!important}.hero-main img,.hero-inset img{image-rendering:auto}.fx-spotlight{mix-blend-mode:normal;opacity:.35}}
+/* Safari-specific safe viewport behavior */
+@supports (-webkit-touch-callout:none){.mobile-dock{bottom:max(7px,env(safe-area-inset-bottom))}.hero-main img,.hero-inset img{-webkit-transform:translateZ(0);transform:translateZ(0)}}
+/* No-grid progressive fallback */
+@supports not (display:grid){.hero,.section-intro,.why,.quote{display:flex;flex-wrap:wrap}.hero-copy,.hero-visual,.section-intro>*,.why>*,.quote>*{width:50%}.product-grid,.finish-row,.steps,.hero-proof{display:flex;flex-wrap:wrap}.product-grid article{width:20%}.finish-row>div,.steps>div{width:20%}.hero-proof>div{width:16.666%}.project-grid{display:flex;flex-wrap:wrap}.project-grid figure{width:33.333%;height:280px}.lead-form{display:flex;flex-wrap:wrap}.lead-form label{width:50%;padding:6px}}
+/* Focus visibility across browsers */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--bronze2);outline-offset:3px}
+@supports not selector(:focus-visible){a:focus,button:focus,input:focus,select:focus,summary:focus{outline:2px solid #e2ab68;outline-offset:3px}}
+/* Print / forced-colour sanity */
+@media (forced-colors:active){.gold,.header-cta{border:1px solid ButtonText}.fx-spotlight,.fx-progress{display:none}.hero-badge{border:2px solid CanvasText}}
+@media print{.header,.top-strip,.mobile-dock,.fx-progress,.fx-spotlight{display:none!important}.hero,.section,.quote{background:#fff!important;color:#000!important}.hero-copy,.section-intro,.why,.quote{color:#000!important}.hero{min-height:0;padding:30px}.hero-visual{display:none}.reveal{opacity:1!important;transform:none!important;filter:none!important}}
