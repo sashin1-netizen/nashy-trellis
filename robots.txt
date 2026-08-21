@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sashin1-netizen.github.io/nashy-trellis/sitemap.xml
